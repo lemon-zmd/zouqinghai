@@ -21,6 +21,7 @@ public final class R {
         public static final int view_3=0x7f020007;
         public static final int view_4=0x7f020008;
         public static final int view_5=0x7f020009;
+        public static final int whitepaper=0x7f02000a;
     }
     public static final class id {
         public static final int cascaded_content=0x7f050003;
