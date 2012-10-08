@@ -3,8 +3,7 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">-->
     <TwoLineListItem xmlns:android="http://schemas.android.com/apk/res/android"   
-    android:paddingTop="2dip"  
-    android:paddingBottom="2dip"  
+    android:padding="2dp"
     android:layout_width="match_parent"  
     android:layout_height="wrap_content"  
     android:minHeight="?android:attr/listPreferredItemHeight"  
@@ -14,19 +13,20 @@
     <ImageView android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:id="@+id/view_pic"
         android:src="@android:drawable/alert_dark_frame"></ImageView>
-        
     <TextView android:layout_width="wrap_content"
+        android:layout_marginLeft="8dp"
         android:textColor="@android:color/black"
         android:layout_toRightOf="@id/view_pic"
         android:layout_height="wrap_content" android:id="@+id/view_intro"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="TextView"></TextView>
     <TextView android:layout_width="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_toRightOf="@id/view_pic"
         android:layout_below="@id/view_intro"
         android:textColor="@android:color/black"
         android:layout_height="wrap_content" android:id="@+id/textView2"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="详细"></TextView>
 </TwoLineListItem>
 <!--  </LinearLayout>-->

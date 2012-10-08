@@ -5,10 +5,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import android.app.ListActivity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.SimpleAdapter;
-import com.zouqinghai.R;
 
+import com.markupartist.android.widget.ActionBar;
+import com.markupartist.android.widget.ActionBar.Action;
+import com.markupartist.android.widget.ActionBar.IntentAction;
+import com.zouqinghai.R;
+import com.zouqinghai.ZouqinghaiActivity;
+
+/**
+ * 景点页.
+ * @author lemon
+ *
+ */
 public class ViewActivity extends ListActivity {
     private final String PIC_URL="pic_url";
     private final String VIEW_INTRO="view_intro";
@@ -20,6 +32,7 @@ public class ViewActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view);
+        initActionBar();
         setListAdapter(initListData());
     }
     
@@ -38,5 +51,32 @@ public class ViewActivity extends ListActivity {
         }
         SimpleAdapter sa = new SimpleAdapter(this, listItems, R.layout.view_item, new String[] {PIC_URL, VIEW_INTRO}, new int[] {R.id.view_pic, R.id.view_intro});
         return sa;
+    }
+    
+    private void initActionBar(){
+        final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
+        //actionBar.setHomeAction(new IntentAction(this, createIntent(this), R.drawable.ic_title_home_demo));
+        actionBar.setTitle("景点");
+        
+        actionBar.setHomeAction(new IntentAction(this, ViewActivity.createIntent(this), R.drawable.ic_title_home_default));
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        final Action shareAction = new IntentAction(this, createShareIntent(), R.drawable.ic_title_share_default);
+        actionBar.addAction(shareAction);
+        final Action otherAction = new IntentAction(this, new Intent(this, ZouqinghaiActivity.class), R.drawable.ic_title_export_default);
+        actionBar.addAction(otherAction);
+    }
+    
+    public static Intent createIntent(Context context) {
+        Intent i = new Intent(context, ViewActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return i;
+    }
+
+    private Intent createShareIntent() {
+        final Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "zouqinghai");
+        return Intent.createChooser(intent, "Share");
     }
 }
