@@ -32,18 +32,11 @@ containing a value of this type.
         public static final int actionbar_item_width=0x7f050002;
     }
     public static final class drawable {
-        public static final int Hotpink=0x7f020020;
-        public static final int PowderBlue=0x7f02001e;
         public static final int actionbar_back_indicator=0x7f020000;
         public static final int actionbar_background=0x7f020001;
         public static final int actionbar_btn=0x7f020002;
         public static final int actionbar_btn_normal=0x7f020003;
         public static final int actionbar_btn_pressed=0x7f020004;
-        public static final int black=0x7f020015;
-        public static final int blue=0x7f020016;
-        public static final int brown=0x7f02001f;
-        public static final int green=0x7f020017;
-        public static final int grey=0x7f02001b;
         public static final int header_bg=0x7f020005;
         public static final int ic_title_export_default=0x7f020006;
         public static final int ic_title_home_default=0x7f020007;
@@ -52,19 +45,13 @@ containing a value of this type.
         public static final int listview_divider_gradient_line=0x7f02000a;
         public static final int logo=0x7f02000b;
         public static final int logo_transparent=0x7f02000c;
-        public static final int orange=0x7f020018;
-        public static final int pink=0x7f020019;
-        public static final int red=0x7f02001c;
         public static final int round_shape_grey_bg=0x7f02000d;
         public static final int view_1=0x7f02000e;
         public static final int view_2=0x7f02000f;
         public static final int view_3=0x7f020010;
         public static final int view_4=0x7f020011;
         public static final int view_5=0x7f020012;
-        public static final int violet=0x7f02001a;
-        public static final int white=0x7f020014;
         public static final int whitepaper=0x7f020013;
-        public static final int yellow=0x7f02001d;
     }
     public static final class id {
         public static final int actionbar=0x7f080011;
@@ -80,14 +67,15 @@ containing a value of this type.
         public static final int cascaded_content=0x7f08000d;
         public static final int close_header_btn=0x7f08000e;
         public static final int cur_position=0x7f08000b;
-        public static final int gallery1=0x7f080019;
         public static final int header_comp=0x7f080010;
         public static final int imageView1=0x7f08000f;
         public static final int logo=0x7f08000c;
         public static final int nav_btn=0x7f08000a;
         public static final int screen=0x7f080000;
+        public static final int spot_gallery=0x7f08001a;
         public static final int spot_intro_detail=0x7f080018;
         public static final int spot_intro_main=0x7f080017;
+        public static final int spot_intro_tip=0x7f080019;
         public static final int spot_pic=0x7f080016;
         public static final int textView2=0x7f080014;
         public static final int title_bar=0x7f080015;

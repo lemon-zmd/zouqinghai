@@ -1,60 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/round_shape_grey_bg"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent" android:layout_height="match_parent"
+		android:orientation="vertical">
 
-    <!-- action bar -->
-    <com.markupartist.android.widget.ActionBar
-        android:id="@+id/actionbar"
-        style="@style/ActionBar"
-        />
+		<!-- action bar -->
+		<com.markupartist.android.widget.ActionBar
+			android:id="@+id/actionbar" style="@style/ActionBar" />
 
-    <!-- introduction to the spot -->
+		<!-- introduction to the spot -->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-         >
+		<RelativeLayout android:layout_width="match_parent"
+			android:layout_height="wrap_content" android:layout_margin="8dp"
+			android:paddingBottom="8dp"
+			android:background="@android:color/white">
 
-        <TextView
-            android:id="@+id/title_bar"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="spot"
-            android:background="#33B5E5" />
+			<TextView android:id="@+id/title_bar" android:layout_width="match_parent"
+				android:layout_height="48dp" android:text="景点简介" android:background="#33B5E5" />
 
-        <ImageView
-            android:id="@+id/spot_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title_bar"
-            android:src="@drawable/view_5" />
+			<ImageView android:id="@+id/spot_pic"
 
-        <TextView
-            android:id="@+id/spot_intro_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title_bar"
-            android:layout_toRightOf="@id/spot_pic"
-            android:text="main" />
+				android:layout_margin="8dp" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_below="@id/title_bar"
+				android:src="@drawable/view_5" />
 
-        <TextView
-            android:id="@+id/spot_intro_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/spot_intro_main"
-            android:layout_toRightOf="@id/spot_pic"
-            android:text="detail" />
-    </RelativeLayout>
+			<TextView android:id="@+id/spot_intro_main"
+				android:layout_marginTop="8dp" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_below="@id/title_bar"
+				android:layout_toRightOf="@id/spot_pic" android:text="门源" />
 
-    <!-- photo gallery of the spot -->
-    <Gallery
-        android:id="@+id/gallery1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+			<TextView android:id="@+id/spot_intro_detail"
+				android:layout_marginTop="8dp" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_below="@id/spot_intro_main"
+				android:layout_toRightOf="@id/spot_pic"
+				android:text="七八月的门源永远是金色的。而且不用到门源，在去门源的那一路已经浸在了金灿灿的油菜花中了！" />
 
-    <!-- blog | information(eat,accomodation) -->
-    
-</LinearLayout>
+			<TextView android:id="@+id/spot_intro_tip"
+				android:layout_marginLeft="8dp" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_below="@id/spot_intro_detail"
+				android:text="最佳观景处 推荐两个拍照的地方，一个是青石嘴镇的元山观花台，是一个山包包的观景台，要收30块钱的门票，这点让人略有些从梦境回归现实，有些郁闷，但爬上去后，不禁感叹" />
+			<!-- photo gallery of the spot -->
+			<Gallery android:id="@+id/spot_gallery"
+				android:layout_margin="8dp" 
+			    android:layout_below="@id/spot_intro_tip"
+				android:spacing="8dp" android:gravity="left" android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+		</RelativeLayout>
+
+
+		<!-- blog | information(eat,accomodation) -->
+
+
+	</LinearLayout>
+</ScrollView>

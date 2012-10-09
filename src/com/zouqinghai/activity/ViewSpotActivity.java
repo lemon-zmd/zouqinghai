@@ -1,14 +1,16 @@
 package com.zouqinghai.activity;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Gallery;
+
 import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 import com.zouqinghai.R;
 import com.zouqinghai.ZouqinghaiActivity;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
+import com.zouqinghai.activity.common.SpotImageAdapter;
 
 public class ViewSpotActivity extends Activity{
     
@@ -20,6 +22,7 @@ public class ViewSpotActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_spot);
         initActionBar();
+        initSpotPics();
     }
 
     private void initActionBar() {
@@ -36,4 +39,14 @@ public class ViewSpotActivity extends Activity{
     
     }
 
+    private void initSpotPics() {
+        final Gallery g = (Gallery) findViewById(R.id.spot_gallery);
+        try {
+            g.setAdapter(new SpotImageAdapter(this));
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -76,7 +76,7 @@ public class ViewActivity extends ListActivity {
         actionBar.setTitle("景点");
         
         actionBar.setHomeAction(new IntentAction(this, ViewActivity.createIntent(this), R.drawable.ic_title_home_default));
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(false);
 
         final Action shareAction = new IntentAction(this, createShareIntent(), R.drawable.ic_title_share_default);
         actionBar.addAction(shareAction);
