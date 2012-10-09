@@ -8,6 +8,10 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.markupartist.android.widget.ActionBar;
@@ -34,8 +38,21 @@ public class ViewActivity extends ListActivity {
         setContentView(R.layout.view);
         initActionBar();
         setListAdapter(initListData());
+        initEventListen();
     }
     
+    private void initEventListen() {
+        final ListView lv = this.getListView();
+        lv.setOnItemClickListener(new OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                // go to spot view.
+                Intent toSpot = new Intent(ViewActivity.this, ViewSpotActivity.class);
+                startActivity(toSpot);
+            }
+        });
+    }
+
     /**
      * init the adapter.
      * @return
