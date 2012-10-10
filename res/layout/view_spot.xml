@@ -1,57 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@drawable/round_shape_grey_bg"
-	android:layout_width="fill_parent" android:layout_height="fill_parent">
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent" android:layout_height="match_parent"
-		android:orientation="vertical">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/round_shape_grey_bg" >
 
-		<!-- action bar -->
-		<com.markupartist.android.widget.ActionBar
-			android:id="@+id/actionbar" style="@style/ActionBar" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-		<!-- introduction to the spot -->
+        <!-- action bar -->
 
-		<RelativeLayout android:layout_width="match_parent"
-			android:layout_height="wrap_content" android:layout_margin="8dp"
-			android:paddingBottom="8dp"
-			android:background="@android:color/white">
+        <com.markupartist.android.widget.ActionBar
+            android:id="@+id/actionbar"
+            style="@style/ActionBar" />
 
-			<TextView android:id="@+id/title_bar" android:layout_width="match_parent"
-				android:layout_height="48dp" android:text="景点简介" android:background="#33B5E5" />
+        <!-- introduction to the spot -->
 
-			<ImageView android:id="@+id/spot_pic"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@android:color/white"
+            android:paddingBottom="8dp" >
 
-				android:layout_margin="8dp" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:layout_below="@id/title_bar"
-				android:src="@drawable/view_5" />
+            <TextView
+                android:id="@+id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#FBF5E6"
+                android:text="景点简介" />
 
-			<TextView android:id="@+id/spot_intro_main"
-				android:layout_marginTop="8dp" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:layout_below="@id/title_bar"
-				android:layout_toRightOf="@id/spot_pic" android:text="门源" />
+            <ImageView
+                android:id="@+id/spot_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_bar"
+                android:layout_margin="8dp"
+                android:src="@drawable/view_5" />
 
-			<TextView android:id="@+id/spot_intro_detail"
-				android:layout_marginTop="8dp" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:layout_below="@id/spot_intro_main"
-				android:layout_toRightOf="@id/spot_pic"
-				android:text="七八月的门源永远是金色的。而且不用到门源，在去门源的那一路已经浸在了金灿灿的油菜花中了！" />
+            <TextView
+                android:id="@+id/spot_intro_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_bar"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/spot_pic"
+                android:text="门源" />
 
-			<TextView android:id="@+id/spot_intro_tip"
-				android:layout_marginLeft="8dp" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:layout_below="@id/spot_intro_detail"
-				android:text="最佳观景处 推荐两个拍照的地方，一个是青石嘴镇的元山观花台，是一个山包包的观景台，要收30块钱的门票，这点让人略有些从梦境回归现实，有些郁闷，但爬上去后，不禁感叹" />
-			<!-- photo gallery of the spot -->
-			<Gallery android:id="@+id/spot_gallery"
-				android:layout_margin="8dp" 
-			    android:layout_below="@id/spot_intro_tip"
-				android:spacing="8dp" android:gravity="left" android:layout_width="match_parent"
-				android:layout_height="wrap_content" />
-		</RelativeLayout>
+            <TextView
+                android:id="@+id/spot_intro_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spot_intro_main"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/spot_pic"
+                android:text="七八月的门源永远是金色的。而且不用到门源，在去门源的那一路已经浸在了金灿灿的油菜花中了！" />
 
+            <TextView
+                android:id="@+id/spot_intro_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spot_intro_detail"
+                android:layout_marginLeft="8dp"
+                android:text="最佳观景处 推荐两个拍照的地方，一个是青石嘴镇的元山观花台，是一个山包包的观景台，要收30块钱的门票，这点让人略有些从梦境回归现实，有些郁闷，但爬上去后，不禁感叹" />
+            <!-- photo gallery of the spot -->
 
-		<!-- blog | information(eat,accomodation) -->
+            <Gallery
+                android:id="@+id/spot_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spot_intro_tip"
+                android:layout_margin="8dp"
+                android:gravity="left"
+                android:spacing="8dp" />
+        </RelativeLayout>
 
+        <!-- blog | information(eat,accomodation) -->
 
-	</LinearLayout>
+        <TabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_alignParentBottom="true"
+                android:background="#424242" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:id="@+id/view_spot_blog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/blog_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="blog" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_spot_others"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/others_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Others" />
+                </LinearLayout>
+            </FrameLayout>
+        </TabHost>
+    </LinearLayout>
+
 </ScrollView>
