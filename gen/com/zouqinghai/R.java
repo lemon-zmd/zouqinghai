@@ -107,6 +107,7 @@ containing a value of this type.
         public static final int ActionBarHomeLogo=0x7f070003;
         public static final int ActionBarItem=0x7f070001;
         public static final int ActionBarProgressBar=0x7f070004;
+        public static final int lemon_theme=0x7f070005;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.
