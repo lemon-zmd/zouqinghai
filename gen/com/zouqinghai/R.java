@@ -64,7 +64,6 @@ containing a value of this type.
         public static final int actionbar_item=0x7f080009;
         public static final int actionbar_progress=0x7f080007;
         public static final int actionbar_title=0x7f080008;
-        public static final int blog_title=0x7f08001a;
         public static final int header_comp=0x7f08000b;
         public static final int icon=0x7f08000d;
         public static final int imageView1=0x7f08000a;
@@ -72,17 +71,18 @@ containing a value of this type.
         public static final int name=0x7f08000e;
         public static final int others_title=0x7f08001c;
         public static final int screen=0x7f080000;
-        public static final int spot_gallery=0x7f080018;
-        public static final int spot_intro_detail=0x7f080016;
-        public static final int spot_intro_main=0x7f080015;
-        public static final int spot_intro_tip=0x7f080017;
-        public static final int spot_pic=0x7f080014;
+        public static final int spot_gallery=0x7f08001a;
+        public static final int spot_intro_detail=0x7f080018;
+        public static final int spot_intro_main=0x7f080017;
+        public static final int spot_intro_tip=0x7f080019;
+        public static final int spot_pic=0x7f080016;
         public static final int textView2=0x7f080012;
-        public static final int title_bar=0x7f080013;
         public static final int view_intro=0x7f080011;
         public static final int view_pic=0x7f080010;
-        public static final int view_spot_blog=0x7f080019;
+        public static final int view_spot_introduction=0x7f080015;
         public static final int view_spot_others=0x7f08001b;
+        public static final int view_spot_pic_waterfall_container=0x7f080014;
+        public static final int view_spot_pic_waterfall_scroll=0x7f080013;
     }
     public static final class layout {
         public static final int actionbar=0x7f030000;

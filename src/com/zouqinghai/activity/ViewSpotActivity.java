@@ -17,6 +17,7 @@ import com.markupartist.android.widget.ActionBar.IntentAction;
 import com.zouqinghai.R;
 import com.zouqinghai.ZouqinghaiActivity;
 import com.zouqinghai.activity.common.SpotImageAdapter;
+import com.zouqinghai.activity.waterfall.WaterFallUtil;
 
 public class ViewSpotActivity extends Activity{
     
@@ -28,21 +29,29 @@ public class ViewSpotActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_spot);
         initActionBar();
-        initSpotPics();
+//        initSpotPics();
         initSpotOthers();
     }
 
     private void initSpotOthers() {
-        String TAB1 = "主题";  
-        String TAB2 = "壁纸";  
+        String TAB1 = "主题";
+        String TAB2 = "intro";
+        String TAB3 = "壁纸";
         TabHost mTabHost = (TabHost) findViewById(android.R.id.tabhost);  
         mTabHost.setup();
           
-        mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator(getMenuItem(R.drawable.logo, TAB1)).setContent(R.id.view_spot_blog));  
-        mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator(getMenuItem(android.R.color.black,TAB2)).setContent(R.id.view_spot_others));  
+        mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator(getMenuItem(R.drawable.logo, TAB1)).setContent(R.id.view_spot_pic_waterfall_scroll));
+        initPics();
+        mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator(getMenuItem(android.R.color.white,TAB2)).setContent(R.id.view_spot_introduction));
+        initSpotPics();
+        mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator(getMenuItem(android.R.color.black,TAB3)).setContent(R.id.view_spot_others));
 //        mTabHost.addTab(mTabHost.newTabSpec("tab3").setIndicator(getMenuItem(R.drawable.iconbg_ispressed, TAB3)).setContent(R.id.iconbg));  
 //        mTabHost.addTab(mTabHost.newTabSpec("tab4").setIndicator(getMenuItem(R.drawable.screenlock_ispressed, TAB4)).setContent(R.id.screenlock));  
 //        mTabHost.addTab(mTabHost.newTabSpec("tab5").setIndicator(getMenuItem(R.drawable.effect_ispressed, TAB5)).setContent(R.id.effect)); 
+    }
+
+    private void initPics() {
+        new WaterFallUtil(this).create(R.id.view_spot_pic_waterfall_scroll, R.id.view_spot_pic_waterfall_container);
     }
 
     public View getMenuItem(int imgID, String textID){  
