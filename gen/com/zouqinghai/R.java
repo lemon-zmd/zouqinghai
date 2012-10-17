@@ -51,7 +51,10 @@ containing a value of this type.
         public static final int view_3=0x7f020010;
         public static final int view_4=0x7f020011;
         public static final int view_5=0x7f020012;
-        public static final int whitepaper=0x7f020013;
+        public static final int view_spot_activate_tab_bg=0x7f020013;
+        public static final int view_spot_inactivate_tab_bg=0x7f020014;
+        public static final int view_spot_tab_background=0x7f020015;
+        public static final int whitepaper=0x7f020016;
     }
     public static final class id {
         public static final int actionbar=0x7f08000f;
