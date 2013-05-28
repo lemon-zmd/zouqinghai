@@ -18,7 +18,6 @@ import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 import com.zouqinghai.R;
-import com.zouqinghai.ZouqinghaiActivity;
 
 /**
  * 景点页.
@@ -80,8 +79,8 @@ public class ViewActivity extends ListActivity {
 
         final Action shareAction = new IntentAction(this, createShareIntent(), R.drawable.ic_title_share_default);
         actionBar.addAction(shareAction);
-        final Action otherAction = new IntentAction(this, new Intent(this, ZouqinghaiActivity.class), R.drawable.ic_title_export_default);
-        actionBar.addAction(otherAction);
+//        final Action otherAction = new IntentAction(this, new Intent(this, ZouqinghaiActivity.class), R.drawable.ic_title_export_default);
+//        actionBar.addAction(otherAction);
     }
     
     public static Intent createIntent(Context context) {

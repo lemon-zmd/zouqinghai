@@ -16,7 +16,6 @@ import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 import com.zouqinghai.R;
-import com.zouqinghai.ZouqinghaiActivity;
 import com.zouqinghai.activity.common.SpotImageAdapter;
 import com.zouqinghai.activity.waterfall.WaterFallUtil;
 
@@ -74,8 +73,8 @@ public class ViewSpotActivity extends Activity{
         actionBar.setHomeAction(new IntentAction(this, ViewActivity.createIntent(this), R.drawable.ic_title_home_default));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        final Action otherAction = new IntentAction(this, new Intent(this, ZouqinghaiActivity.class), R.drawable.ic_title_export_default);
-        actionBar.addAction(otherAction);
+//        final Action otherAction = new IntentAction(this, new Intent(this, ZouqinghaiActivity.class), R.drawable.ic_title_export_default);
+//        actionBar.addAction(otherAction);
     
     }
 
