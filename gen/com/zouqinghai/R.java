@@ -170,19 +170,21 @@ containing a value of this type.
         public static final int listview_divider_gradient_line=0x7f02000e;
         public static final int logo=0x7f02000f;
         public static final int logo_transparent=0x7f020010;
-        public static final int nav_left=0x7f020011;
-        public static final int no_round=0x7f020012;
-        public static final int round_shape_grey_bg=0x7f020013;
-        public static final int top_round=0x7f020014;
-        public static final int view_1=0x7f020015;
-        public static final int view_2=0x7f020016;
-        public static final int view_3=0x7f020017;
-        public static final int view_4=0x7f020018;
-        public static final int view_5=0x7f020019;
-        public static final int view_spot_activate_tab_bg=0x7f02001a;
-        public static final int view_spot_inactivate_tab_bg=0x7f02001b;
-        public static final int view_spot_tab_background=0x7f02001c;
-        public static final int whitepaper=0x7f02001d;
+        public static final int menu_arrow=0x7f020011;
+        public static final int menu_arrow_right=0x7f020012;
+        public static final int nav_left=0x7f020013;
+        public static final int no_round=0x7f020014;
+        public static final int round_shape_grey_bg=0x7f020015;
+        public static final int top_round=0x7f020016;
+        public static final int view_1=0x7f020017;
+        public static final int view_2=0x7f020018;
+        public static final int view_3=0x7f020019;
+        public static final int view_4=0x7f02001a;
+        public static final int view_5=0x7f02001b;
+        public static final int view_spot_activate_tab_bg=0x7f02001c;
+        public static final int view_spot_inactivate_tab_bg=0x7f02001d;
+        public static final int view_spot_tab_background=0x7f02001e;
+        public static final int whitepaper=0x7f02001f;
     }
     public static final class id {
         public static final int actionbar=0x7f050012;
@@ -268,6 +270,13 @@ containing a value of this type.
         public static final int ActionBarHomeLogo=0x7f070005;
         public static final int ActionBarItem=0x7f070003;
         public static final int ActionBarProgressBar=0x7f070006;
+        /**   for menu drawer 
+         */
+        public static final int MenuDrawerStyle=0x7f070008;
+        public static final int MenuDrawerStyle_Right=0x7f070009;
+        public static final int SampleBase=0x7f07000a;
+        public static final int SampleTheme=0x7f07000b;
+        public static final int SampleTheme_RightDrawer=0x7f07000c;
         public static final int Widget=0x7f070000;
         /**  Base theme for the menu drawer. 
          */

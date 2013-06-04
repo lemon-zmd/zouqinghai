@@ -42,11 +42,11 @@ public class ContentSample extends BaseListSample {
         });
     }
 
-//    @Override
-//    protected void onMenuItemClicked(int position, Item item) {
-//        mContentTextView.setText(item.mTitle);
-//        mMenuDrawer.closeMenu();
-//    }
+    @Override
+    protected void onMenuItemClicked(int position, Item item) {
+        mContentTextView.setText(item.mTitle);
+        mMenuDrawer.closeMenu();
+    }
 
     @Override
     protected int getDragMode() {
@@ -64,17 +64,6 @@ public class ContentSample extends BaseListSample {
         outState.putString(STATE_CONTENT_TEXT, mContentText);
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case android.R.id.home:
-//                mMenuDrawer.toggleMenu();
-//                return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
     @Override
     public void onBackPressed() {
         final int drawerState = mMenuDrawer.getDrawerState();
@@ -86,8 +75,4 @@ public class ContentSample extends BaseListSample {
         super.onBackPressed();
     }
 
-    @Override
-    protected void onMenuItemClicked(int position, Item item) {
-        
-    }
 }
