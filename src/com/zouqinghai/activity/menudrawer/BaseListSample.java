@@ -60,6 +60,7 @@ public abstract class BaseListSample extends FragmentActivity implements MenuAda
         mList.setAdapter(mAdapter);
         mList.setOnItemClickListener(mItemClickListener);
 
+        mList.setCacheColorHint(0);
         mMenuDrawer.setMenuView(mList);
     }
 
