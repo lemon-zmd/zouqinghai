@@ -3,10 +3,13 @@ package com.zouqinghai.activity.menudrawer;
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 
+import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,7 +17,8 @@ import java.util.List;
 
 import com.zouqinghai.R;
 
-public abstract class BaseListSample extends FragmentActivity implements MenuAdapter.MenuListener {
+//public abstract class BaseListSample extends FragmentActivity implements MenuAdapter.MenuListener {
+public abstract class BaseListSample extends Activity implements MenuAdapter.MenuListener {
 
     private static final String STATE_ACTIVE_POSITION = "net.simonvt.menudrawer.samples.ContentSample.activePosition";
 
@@ -57,9 +61,13 @@ public abstract class BaseListSample extends FragmentActivity implements MenuAda
         mAdapter.setListener(this);
         mAdapter.setActivePosition(mActivePosition);
 
+        Button addBtn = new Button(this);
+        addBtn.setText("加一条");
+        mList.addFooterView(addBtn);
+
         mList.setAdapter(mAdapter);
         mList.setOnItemClickListener(mItemClickListener);
-
+        // 去除拖动背景色.
         mList.setCacheColorHint(0);
         mMenuDrawer.setMenuView(mList);
     }
@@ -80,11 +88,11 @@ public abstract class BaseListSample extends FragmentActivity implements MenuAda
         }
     };
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt(STATE_ACTIVE_POSITION, mActivePosition);
-    }
+    // @Override
+    // protected void onSaveInstanceState(Bundle outState) {
+    // super.onSaveInstanceState(outState);
+    // outState.putInt(STATE_ACTIVE_POSITION, mActivePosition);
+    // }
 
     @Override
     public void onActiveViewChanged(View v) {

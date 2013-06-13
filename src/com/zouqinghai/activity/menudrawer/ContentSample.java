@@ -1,16 +1,20 @@
 package com.zouqinghai.activity.menudrawer;
 
-import com.zouqinghai.R;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.SeekBar;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import com.zouqinghai.R;
 
 public class ContentSample extends BaseListSample {
 
@@ -40,6 +44,11 @@ public class ContentSample extends BaseListSample {
                 return v instanceof SeekBar;
             }
         });
+        
+
+        ListView lv = (ListView)findViewById(android.R.id.list);
+        lv.setAdapter(initListData());
+
     }
 
     @Override
@@ -75,4 +84,25 @@ public class ContentSample extends BaseListSample {
         super.onBackPressed();
     }
 
+    /**
+     * init the adapter.
+     * 
+     * @return
+     */
+    private SimpleAdapter initListData() {
+        final String PIC_URL = "pic_url";
+        final String VIEW_INTRO = "view_intro";
+        final int[] pic_arrays = { R.drawable.view_1, R.drawable.view_2, R.drawable.view_3, R.drawable.view_4,
+                R.drawable.view_5 };
+        List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
+        for (int i = 0; i < 10; i++) {
+            Map<String, Object> data = new HashMap<String, Object>();
+            data.put(PIC_URL, pic_arrays[i % 5]);
+            data.put(VIEW_INTRO, "xining_" + i);
+            listItems.add(data);
+        }
+        SimpleAdapter sa = new SimpleAdapter(this, listItems, R.layout.view_item, new String[] { PIC_URL, VIEW_INTRO },
+                new int[] { R.id.view_pic, R.id.view_intro });
+        return sa;
+    }
 }

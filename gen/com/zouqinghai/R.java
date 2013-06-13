@@ -187,7 +187,7 @@ containing a value of this type.
         public static final int whitepaper=0x7f02001f;
     }
     public static final class id {
-        public static final int actionbar=0x7f050012;
+        public static final int actionbar=0x7f050011;
         public static final int actionbar_actions=0x7f05000c;
         public static final int actionbar_home=0x7f050007;
         public static final int actionbar_home_bg=0x7f050009;
@@ -197,11 +197,12 @@ containing a value of this type.
         public static final int actionbar_item=0x7f05000f;
         public static final int actionbar_progress=0x7f05000d;
         public static final int actionbar_title=0x7f05000e;
+        public static final int add_item=0x7f05001a;
         public static final int contentText=0x7f050010;
-        public static final int header_comp=0x7f050017;
-        public static final int icon=0x7f050019;
-        public static final int imageView1=0x7f050014;
-        public static final int ll=0x7f050018;
+        public static final int header_comp=0x7f050016;
+        public static final int icon=0x7f050018;
+        public static final int imageView1=0x7f050013;
+        public static final int ll=0x7f050017;
         /**  Used with View#setTag(int) to specify a position for the active view. 
          */
         public static final int mdActiveViewPosition=0x7f050005;
@@ -220,19 +221,20 @@ containing a value of this type.
         /**  The ID of the menu container. 
          */
         public static final int md__menu=0x7f050003;
-        public static final int name=0x7f05001a;
+        public static final int name=0x7f050019;
         public static final int others_title=0x7f050027;
-        public static final int roundList=0x7f050013;
+        public static final int roundList=0x7f050012;
         public static final int screen=0x7f050006;
-        public static final int sectionHeader=0x7f050015;
-        public static final int seekBar=0x7f050011;
+        public static final int sectionHeader=0x7f050014;
         public static final int spot_gallery=0x7f050025;
         public static final int spot_intro_detail=0x7f050023;
         public static final int spot_intro_main=0x7f050022;
         public static final int spot_intro_tip=0x7f050024;
         public static final int spot_pic=0x7f050021;
-        public static final int textValue=0x7f050016;
+        public static final int textValue=0x7f050015;
         public static final int textView2=0x7f05001d;
+        public static final int todo_sidebar_listview=0x01010001;
+        public static final int todo_siderbar=0x01010000;
         public static final int view_intro=0x7f05001c;
         public static final int view_pic=0x7f05001b;
         public static final int view_spot_introduction=0x7f050020;
@@ -251,9 +253,10 @@ containing a value of this type.
         public static final int menu_row_category=0x7f030007;
         public static final int menu_row_item=0x7f030008;
         public static final int tab_item=0x7f030009;
-        public static final int view=0x7f03000a;
-        public static final int view_item=0x7f03000b;
-        public static final int view_spot=0x7f03000c;
+        public static final int todo_sidebar=0x7f03000a;
+        public static final int view=0x7f03000b;
+        public static final int view_item=0x7f03000c;
+        public static final int view_spot=0x7f03000d;
     }
     public static final class string {
         public static final int actionbar_activity_not_found=0x7f060004;
