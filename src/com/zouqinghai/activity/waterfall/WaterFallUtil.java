@@ -28,7 +28,7 @@ public class WaterFallUtil {
     private Display display;
     private AssetManager asset_manager;
     private List<String> image_filenames;
-    private final String image_path = "images";
+    private final String image_path = "pic_my";
     private Handler handler;
     private int item_width;
 
