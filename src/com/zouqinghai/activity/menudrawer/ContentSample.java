@@ -9,12 +9,14 @@ import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.zouqinghai.R;
+import com.zouqinghai.activity.common.ActionUtil;
 
 public class ContentSample extends BaseListSample {
 
@@ -34,7 +36,6 @@ public class ContentSample extends BaseListSample {
         mMenuDrawer.setContentView(R.layout.activity_contentsample);
         mMenuDrawer.setTouchMode(MenuDrawer.TOUCH_MODE_FULLSCREEN);
 
-
         mContentTextView = (TextView) findViewById(R.id.contentText);
         mContentTextView.setText(mContentText);
 
@@ -44,11 +45,12 @@ public class ContentSample extends BaseListSample {
                 return v instanceof SeekBar;
             }
         });
-        
 
-        ListView lv = (ListView)findViewById(android.R.id.list);
+        ListView lv = (ListView) findViewById(android.R.id.list);
         lv.setAdapter(initListData());
 
+        // add action bar.
+        ActionUtil.initActionBar(this, "我的行程");
     }
 
     @Override

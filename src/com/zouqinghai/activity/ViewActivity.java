@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ext.SatelliteMenu;
+import android.view.ext.SatelliteMenuItem;
+import android.view.ext.SatelliteMenu.SateliteClickedListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -39,8 +43,12 @@ public class ViewActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view);
         initActionBar();
-        setListAdapter(initListData());
+
         initEventListen();
+        initSatelliteMenu();
+        // add adapter to list view.
+        ListView lv = (ListView) findViewById(android.R.id.list);
+        lv.setAdapter(initListData());
     }
 
     private void initEventListen() {
@@ -105,5 +113,40 @@ public class ViewActivity extends ListActivity {
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, "zouqinghai");
         return Intent.createChooser(intent, "Share");
+    }
+
+    /**
+     * initialize the satellite menu.
+     */
+    private void initSatelliteMenu() {
+        SatelliteMenu menu = (SatelliteMenu) findViewById(R.id.menu);
+        // set some props for the menu.
+        menu.setSatelliteDistance(170);
+        menu.setTotalSpacingDegree(90);
+        menu.setCloseItemsOnClick(true);
+        menu.setExpandDuration(500);
+
+        List<SatelliteMenuItem> items = new ArrayList<SatelliteMenuItem>();
+        items.add(new SatelliteMenuItem(1, R.drawable.ic_1));
+        items.add(new SatelliteMenuItem(2, R.drawable.ic_3));
+        items.add(new SatelliteMenuItem(3, R.drawable.ic_4));
+        // items.add(new SatelliteMenuItem(3, R.drawable.ic_5));
+        // items.add(new SatelliteMenuItem(2, R.drawable.ic_6));
+        // items.add(new SatelliteMenuItem(1, R.drawable.ic_2));
+        menu.addItems(items);
+        menu.setOnItemClickedListener(new SateliteClickedListener() {
+            public void eventOccured(int id) {
+                switch (id) {
+                case 1:
+                    // go to spot view.
+                    // wait for the animation done.
+                    Intent toSelf = new Intent(ViewActivity.this, ContentSample.class);
+                    startActivity(toSelf);
+                    break;
+                case 2:
+                case 3:
+                }
+            }
+        });
     }
 }

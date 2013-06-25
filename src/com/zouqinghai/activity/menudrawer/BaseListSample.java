@@ -4,10 +4,9 @@ import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
@@ -32,6 +31,8 @@ public abstract class BaseListSample extends Activity implements MenuAdapter.Men
     @Override
     protected void onCreate(Bundle inState) {
         super.onCreate(inState);
+        // remove title bar 
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         if (inState != null) {
             mActivePosition = inState.getInt(STATE_ACTIVE_POSITION);
