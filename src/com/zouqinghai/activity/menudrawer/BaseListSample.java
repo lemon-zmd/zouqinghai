@@ -64,7 +64,7 @@ public abstract class BaseListSample extends Activity implements MenuAdapter.Men
 
         Button addBtn = new Button(this);
         addBtn.setText("加一条");
-        mList.addFooterView(addBtn);
+        mList.addHeaderView(addBtn);
 
         mList.setAdapter(mAdapter);
         mList.setOnItemClickListener(mItemClickListener);

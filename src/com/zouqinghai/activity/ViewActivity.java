@@ -23,6 +23,7 @@ import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 import com.zouqinghai.R;
+import com.zouqinghai.activity.common.Utils;
 import com.zouqinghai.activity.menudrawer.ContentSample;
 
 /**
@@ -56,9 +57,15 @@ public class ViewActivity extends ListActivity {
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                // go to spot view.
-                Intent toSpot = new Intent(ViewActivity.this, ViewSpotActivity.class);
-                startActivity(toSpot);
+                Utils.dismissDialogWithDelay(Utils.loadProgressDialog(ViewActivity.this), 1000l,
+                        new Utils.DialogListener() {
+                            @Override
+                            public void action() {
+                                Intent toSpot = new Intent(ViewActivity.this, ViewSpotActivity.class);
+                                startActivity(toSpot);
+                            }
+                        });                // go to spot view.
+
             }
         });
     }
@@ -138,10 +145,21 @@ public class ViewActivity extends ListActivity {
             public void eventOccured(int id) {
                 switch (id) {
                 case 1:
+                    Utils.dismissDialogWithDelay(Utils.loadProgressDialog(ViewActivity.this), 1000l,
+                            new Utils.DialogListener() {
+                                @Override
+                                public void action() {
+                                    Intent toSelf = new Intent(ViewActivity.this, ContentSample.class);
+                                    startActivity(toSelf);
+                                }
+
+                            });
                     // go to spot view.
                     // wait for the animation done.
-                    Intent toSelf = new Intent(ViewActivity.this, ContentSample.class);
-                    startActivity(toSelf);
+                    /*
+                     * Intent toSelf = new Intent(ViewActivity.this,
+                     * ContentSample.class); startActivity(toSelf);
+                     */
                     break;
                 case 2:
                 case 3:
